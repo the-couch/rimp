@@ -18,6 +18,7 @@ import Rimp from 'rimp'
   buttonValue={`submit`}
   buttonStyles={`btn`}
   containerStyles={`newsletter__form`}
+  completeMessage={`Thanks, we'll send you an email to confirm!`}
   mailChimpUrl="//url.us10.list-manage.com/subscribe/post?u=user&amp;id=list"
  />
 ```
@@ -30,6 +31,7 @@ placeholder: 'enter your email address',
 formWrapper: 'flex flex-justify-between flex-align-center',
 containerStyles: 'newsletter__form',
 helpText: 'Please provide a valid email address',
+completeMessage: 'Thanks for subscribing',
 showError: true,
 emailAddress: '',
 mailChimpUrl: null

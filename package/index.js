@@ -14,6 +14,7 @@ export default class Rimp extends Component {
       placeholder: props.placeholder,
       inputStyles: props.inputStyles,
       formWrapper: props.formWrapper,
+      completeMessage: props.completeMessage,
       valid: false,
       isTyping: false,
       showError: props.showError,
@@ -34,6 +35,7 @@ export default class Rimp extends Component {
       placeholder: 'enter your email address',
       formWrapper: 'flex flex-justify-between flex-align-center',
       containerStyles: 'newsletter__form',
+      completeMessage: 'Thanks for subscribing',
       helpText: 'Please provide a valid email address',
       showError: true,
       emailAddress: '',
@@ -121,7 +123,7 @@ export default class Rimp extends Component {
               </div>
             : null}
           </div>
-        : <p>You’ve been added to our list. X</p> }
+        : <p>{this.state.completeMessage}</p> }
       </div>
     )
   }
