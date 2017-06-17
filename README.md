@@ -9,7 +9,6 @@ not a documented solution within mailchimp however it does still `work`
 You will need to grab the naked post url from the mailchimp embed form code
 
 ## Usage
-Grid with four items:
 
 ```javascript
 import Rimp from 'rimp'
