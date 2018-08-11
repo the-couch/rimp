@@ -14,6 +14,10 @@ export default class Rimp extends Component {
       placeholder: props.placeholder,
       inputStyles: props.inputStyles,
       formWrapper: props.formWrapper,
+      labelText: props.labelText,
+      labelStyles: props.labelStyles,
+      formID: props.formID,
+      showLabel: props.showLabel,
       completeMessage: props.completeMessage,
       valid: false,
       isTyping: false,
@@ -37,6 +41,10 @@ export default class Rimp extends Component {
       containerStyles: 'newsletter__form',
       completeMessage: 'Thanks for subscribing',
       helpText: 'Please provide a valid email address',
+      labelText: 'Email address:',
+      labelStyles: 'newsletter__form--label',
+      formID: 'newsletter_email__input',
+      showLabel: false,
       showError: true,
       emailAddress: '',
       mailChimpUrl: null
@@ -112,7 +120,11 @@ export default class Rimp extends Component {
         {!this.state.submitted
           ? <div>
             <form onSubmit={this.handleSubmit} className={this.state.formWrapper}>
-              <input type='email' onChange={this.validateEmail} ref='email' className={this.state.inputStyles} placeholder={this.state.placeholder} />
+              {this.state.showLabel
+                ? <label className={this.state.labelStyles} htmlFor={this.state.formID} >{this.state.labelText}</label>
+                :null
+              }
+              <input id={this.state.formID} type='email' onChange={this.validateEmail} ref='email' className={this.state.inputStyles} placeholder={this.state.placeholder} />
               <button className={this.state.buttonStyles}>{this.state.buttonValue}</button>
             </form>
             {this.state.showError
